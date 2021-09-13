@@ -117,15 +117,16 @@ const letterClass = document.querySelectorAll(".letter");
 const title = document.querySelector(".title");
 
 if (showClass.length === letterClass.length) {
-    overlay.classList.add("win");
+  
+    overlay.className = "win";
     overlay.style.display = "flex"; 
     title.textContent = "You Won!";
    
 };
 
 if (missed > 4) {
-
-    overlay.classList.add("lose");
+   
+    overlay.className = "lose";
     overlay.style.display = "flex"; 
     title.textContent = "You Lost!";
    
