@@ -12,11 +12,11 @@
 const qwerty =  document.getElementById("qwerty");
 const phrase = document.getElementById("phrase");
 const phrases = [
-'seize the day',
-'live laugh love',
-'only way is up',
-'simply the best',
-'the sky is the limit'
+'Seize the day',
+'Live laugh love',
+'Only way is up',
+'Simply the best',
+'The sky is the limit'
 
 ];
 
@@ -39,6 +39,23 @@ overlay.style.display = "none";
 
 btnReset.addEventListener('click', hideOverlay)
 
+
+//eventListener checks when a user presses a button on the screen keyboard
+
+qwerty.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+       e.target.className = 'chosen';
+       e.target.disabled = true;
+
+       const letterFound = checkLetter(e.target);
+       
+       if (!letterFound) {
+           heart[missed].src = 'images/lostHeart.png';
+           missed += 1;
+    }
+         checkWin();
+  }
+});
 
 
 /* FUNCTIONS */
@@ -91,24 +108,7 @@ function checkLetter(button) {
       return matched;
 };
 
-//add eventListener to check when a user presses a button on the screen keyboard
-
-qwerty.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON') {
-       e.target.className = 'chosen';
-       e.target.disabled = true;
-
-       const letterFound = checkLetter(e.target);
-       
-       if (!letterFound) {
-           heart[missed].src = 'images/lostHeart.png';
-           missed += 1;
-    }
-         checkWin();
-  }
-});
-
-//create a checkWin function to see if .letter is equal to .show class
+//create a checkWin function to see if length of .letter is equal to .show class to display win/lose overlay
 
 function checkWin() {
 
