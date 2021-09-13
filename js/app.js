@@ -120,6 +120,7 @@ if (showClass.length === letterClass.length) {
     overlay.classList.add("win");
     overlay.style.display = "flex"; 
     title.textContent = "You Won!";
+   
 };
 
 if (missed > 4) {
@@ -127,6 +128,35 @@ if (missed > 4) {
     overlay.classList.add("lose");
     overlay.style.display = "flex"; 
     title.textContent = "You Lost!";
+   
 };
 
+// recreates the buttons in the keyboard, generates a new random phrase, and sets the number of misses to zero.
+
+
+btnReset.textContent = "Reset";
+btnReset.addEventListener('click',() => {
+ // clearing the list items
+    missed = 0; 
+    const list = document.querySelector('ul');
+    list.innerHTML = ``;
+    addPhraseToDisplay(getRandomPhraseAsArray(phrases));
+   // reseting the heart images
+    for (let i  =0; i < heart.length; i++) {
+        heart[i].src = 'images/liveHeart.png';
+    }
+  // reseting the keyboard and enabling the keyboard
+  const buttons = document.getElementsByTagName('button');
+  for (let i =0; i<  buttons.length; i++) {   
+        
+        buttons[i].removeAttribute('disabled');
+        buttons[i].classList.remove('chosen');
+
+    }
+    
+    });
+
 };
+
+
+
