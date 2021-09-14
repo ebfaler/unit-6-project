@@ -70,10 +70,10 @@ function getRandomPhraseAsArray(arr) {
    const newArr = arrayPhrase.split('');
    return newArr;  
 }
-const phraseArray = getRandomPhraseAsArray(phrases);
-console.log(phraseArray);
+ const phraseArray = getRandomPhraseAsArray(phrases);
+ console.log(phraseArray);
 
-// loops through array of characters and appends to #phrase ul
+// loops through array of characters and appends to #phrase ul to display the phrase
 function addPhraseToDisplay(arr) {
 
    for(let i=0; i < arr.length; i++) {
@@ -92,14 +92,14 @@ function addPhraseToDisplay(arr) {
 };
 addPhraseToDisplay(phraseArray);
 
-// checkLetter The function should loop over the letters and check if they match the letter in the button the player has chosen.
+// checkLetter This main function should loop over the letters and check if they match the letter in the button the player has chosen.
 
 function checkLetter(button) {
     
       const letters = document.querySelectorAll('.letter');
       let matched = false;
 
-      for(let i=0; i < letters.length; i++) {
+        for(let i=0; i < letters.length; i++) {
         if(letters[i].textContent.toLowerCase() === button.textContent) {
            letters[i].classList.add('show');
            matched = true;
@@ -112,11 +112,11 @@ function checkLetter(button) {
 
 function checkWin() {
 
-const showClass = document.querySelectorAll(".show");
-const letterClass = document.querySelectorAll(".letter");
-const title = document.querySelector(".title");
+  const showClass = document.querySelectorAll(".show");
+  const letterClass = document.querySelectorAll(".letter");
+  const title = document.querySelector(".title");
 
-if (showClass.length === letterClass.length) {
+   if (showClass.length === letterClass.length) {
   
     overlay.className = "win";
     overlay.style.display = "flex"; 
@@ -124,7 +124,7 @@ if (showClass.length === letterClass.length) {
    
 };
 
-if (missed > 4) {
+   if (missed > 4) {
    
     overlay.className = "lose";
     overlay.style.display = "flex"; 
@@ -147,8 +147,8 @@ btnReset.addEventListener('click',() => {
         heart[i].src = 'images/liveHeart.png';
     }
   // reseting the keyboard and enabling the keyboard
-  const buttons = document.getElementsByTagName('button');
-  for (let i =0; i<  buttons.length; i++) {   
+    const buttons = document.getElementsByTagName('button');
+       for (let i =0; i<  buttons.length; i++) {   
         
         buttons[i].removeAttribute('disabled');
         buttons[i].classList.remove('chosen');
