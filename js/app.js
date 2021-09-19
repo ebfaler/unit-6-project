@@ -145,7 +145,7 @@ function checkWin() {
 
     btnReset.textContent = "Reset";
     btnReset.addEventListener('click', () => {
-        // clearing the list items
+        // clearing the list items and creating new phrase array
         missed = 0;
         const list = document.querySelector('ul');
         list.innerHTML = ``;
