@@ -162,3 +162,9 @@ button {
 .lose a {
   color: var(--color-lose);
 }
+
+
+.answer {
+
+  font-size: medium;
+}
