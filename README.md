@@ -1,4 +1,4 @@
-# unit-6-project
+# Treehouse Techdgree Project 6: Game Show App
  
  
 In this project, I've created a browser version of “Wheel of Success”, a word guessing game where players will click letters from an onscreen keyboard to try to guess a random phrase.
